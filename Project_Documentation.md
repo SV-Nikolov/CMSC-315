@@ -1,8 +1,8 @@
 # CMSC 315 – Project 1 Documentation
 ## Java Delimiter Matching Program
 
-**Student:** [Your Name]  
-**Date:** January 21, 2026  
+**Student:** Stefan V. Nikolov 
+**Date:** January 20, 2026  
 **Course:** CMSC 315 – Data Structures and Analysis
 
 ---
