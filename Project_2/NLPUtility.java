@@ -1,3 +1,11 @@
+/**
+ * Student Name: Stefan V. Nikolov
+ * Project: CMSC 315 Project 2 - Word Frequency & Sentiment Analysis
+ * Date: January 26, 2026
+ * Description: Utility class containing static methods for natural language processing operations
+ *              including tokenization, word frequency counting, sentiment analysis, and sorting
+ */
+
 import java.util.*;
 
 public class NLPUtility {

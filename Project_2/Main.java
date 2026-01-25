@@ -1,3 +1,10 @@
+/**
+ * Student Name: Stefan V. Nikolov
+ * Project: CMSC 315 Project 2 - Word Frequency & Sentiment Analysis
+ * Date: January 26, 2026
+ * Description: Main driver class that handles user input/output and calls NLP utility methods
+ */
+
 import java.util.*;
 
 public class Main {
