@@ -97,39 +97,39 @@ public static Map<String, Object> getWordsWithMaxFrequency(Map<String, Integer> 
 ### Test Coverage Summary
 | Test Suite | Test Cases | Status |
 |-----------|-----------|--------|
-| splitTextIntoTokens | 6 | ✅ All Pass |
-| countFilteredWords | 6 | ✅ All Pass |
-| sortByValueDescending | 6 | ✅ All Pass |
-| getSentiment | 6 | ✅ All Pass |
-| getWordsWithMaxFrequency | 6 | ✅ All Pass |
-| **TOTAL** | **36** | **✅ 100% Pass** |
+| splitTextIntoTokens | 6 | All Pass |
+| countFilteredWords | 6 | All Pass |
+| sortByValueDescending | 6 | All Pass |
+| getSentiment | 6 | All Pass |
+| getWordsWithMaxFrequency | 6 | All Pass |
+| **TOTAL** | **36** | **100% Pass** |
 
 ### Key Test Cases
 
 **TC 2.1: Standard Word Count**
 - Input: `["i", "love", "a", "good", "BOOK", "and", "LOVE", "sad", "BooK", "book"]`
 - Expected: `{book=3, good=1, i=1, love=2, sad=1}`
-- Status: ✅ Pass
+- Status: Pass
 
 **TC 3.1: Frequency Descending Sort**
 - Input: `{book=3, good=1, i=1, love=2, sad=1}`
 - Expected: `{book=3, love=2, good=1, i=1, sad=1}`
-- Status: ✅ Pass
+- Status: Pass
 
 **TC 4.1: Sentiment Analysis**
 - Input: WordMap with `love=2, good=1, sad=1`
 - Expected: `"Positive: 3, Negative: 1"`
-- Status: ✅ Pass
+- Status: Pass
 
 **TC 5.2: Multiple Max Frequency Words**
 - Input: `{good=1, i=1, love=3, book=3, sad=1}`
 - Expected: `{words=[book, love], frequency=3}`
-- Status: ✅ Pass
+- Status: Pass
 
 ### Sorting Verification
-- ✅ **Alphabetical Sort:** TreeMap in countFilteredWords correctly sorts A-Z
-- ✅ **Frequency Descending:** LinkedHashMap in sortByValueDescending correctly orders high-to-low
-- ✅ **Alphabetical Sort (Max Words):** Words with max frequency sorted alphabetically
+- Alphabetical Sort: TreeMap in countFilteredWords correctly sorts A-Z
+- Frequency Descending: LinkedHashMap in sortByValueDescending correctly orders high-to-low
+- Alphabetical Sort (Max Words): Words with max frequency sorted alphabetically
 
 ---
 
@@ -211,8 +211,8 @@ Most frequent word(s): [love, really] (used 3 times)
 | Main.java | Driver class with user I/O (fully implemented) |
 | NLPUtility.java | Utility class with 5 static methods (implemented) |
 | NLPUtilityTest.java | Unit test class with 36 test cases |
-| Ready.zip | Submission package (source code only) |
-| Project_Documentation.md | This file |
+| Project_Documentation.md | Consolidated documentation |
+| README.md | Short project overview and usage |
 
 ---
 
@@ -239,11 +239,11 @@ java NLPUtilityTest
 ## 8. Summary
 
 This project successfully implements a Natural Language Processing utility that analyzes text for word frequency and sentiment. All five methods are correctly implemented with:
-- ✅ Proper data structure usage (TreeMap, LinkedHashMap, HashSet)
-- ✅ Correct sorting algorithms (alphabetical and frequency-based)
-- ✅ Case-insensitive processing
-- ✅ Comprehensive test coverage (36 tests, 100% pass rate)
-- ✅ Edge case handling
+- Proper data structure usage (TreeMap, LinkedHashMap, HashSet)
+- Correct sorting algorithms (alphabetical and frequency-based)
+- Case-insensitive processing
+- Comprehensive test coverage (36 tests, 100% pass rate)
+- Edge case handling
 
 The implementation demonstrates understanding of:
 - Java Collections Framework
