@@ -4,8 +4,27 @@
 
 echo "Compiling CMSC 315 Project 4..."
 
-# Compile all Java files
-javac Vertex.java Graph.java GraphPane.java Main.java
+# Locate JavaFX SDK (required for JavaFX in JDK 11+)
+if [ -z "$JAVA_FX" ]; then
+    for d in /opt/javafx-sdk* /opt/JavaFX/javafx-sdk* /usr/local/javafx-sdk* "$HOME/javafx-sdk"*; do
+        if [ -d "$d" ]; then
+            JAVA_FX="$d"
+            break
+        fi
+    done
+fi
+
+if [ -z "$JAVA_FX" ]; then
+    echo "JavaFX SDK not found."
+    echo "Please download JavaFX SDK and set JAVA_FX to its install path."
+    echo "Example: export JAVA_FX=\"/opt/javafx-sdk-21\""
+    exit 1
+fi
+
+echo "Using JavaFX SDK at: $JAVA_FX"
+
+# Compile all Java files with JavaFX modules
+javac --module-path "$JAVA_FX/lib" --add-modules javafx.controls Vertex.java Graph.java GraphPane.java Main.java
 
 if [ $? -ne 0 ]; then
     echo "Compilation failed. Make sure Java JDK is installed."
@@ -24,6 +43,17 @@ fi
 
 echo "JAR file created successfully: GraphVisualization.jar"
 echo ""
+echo "Creating run script (run.sh)..."
+cat > run.sh <<'EOF'
+#!/bin/bash
+if [ -z "$JAVA_FX" ]; then
+    echo "JAVA_FX is not set. Example: export JAVA_FX=\"/opt/javafx-sdk-21\""
+    exit 1
+fi
+java --module-path "$JAVA_FX/lib" --add-modules javafx.controls -jar GraphVisualization.jar
+EOF
+chmod +x run.sh
+echo ""
 echo "You can now run the application with:"
-echo "  java -jar GraphVisualization.jar"
+echo "  ./run.sh"
 echo ""
