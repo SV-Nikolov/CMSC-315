@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Main-Class: Main
+Class-Path: .
+Created-By: CMSC 315 Student
+Implementation-Title: Graph Visualization with Analysis Tools
+Implementation-Version: 1.0
+Implementation-Vendor: Stefan V. Nikolov
